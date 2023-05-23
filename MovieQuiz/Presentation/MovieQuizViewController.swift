@@ -8,6 +8,9 @@ final class MovieQuizViewController: UIViewController {
         let currentQuestion = questions[currentQuestionIndex]
         let viewModel = convert(model: currentQuestion)
         show(quiz: viewModel)
+        
+        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
     }
     
     // Переменная с индексом текущего вопроса
@@ -99,12 +102,18 @@ final class MovieQuizViewController: UIViewController {
                 text: text,
                 buttonText: "Сыграть ещё раз")
             show(quiz: viewModel)
+            yesButton.isEnabled = true
+            noButton.isEnabled = true
+            imageView.layer.borderColor = nil
         } else {
             currentQuestionIndex += 1
             let nextQuestion = questions[currentQuestionIndex]
             let viewModel = convert(model: nextQuestion)
             
             show(quiz: viewModel)
+            yesButton.isEnabled = true
+            noButton.isEnabled = true
+            imageView.layer.borderColor = nil
         }
     }
     
@@ -114,9 +123,7 @@ final class MovieQuizViewController: UIViewController {
             correctAnswers += 1
         }
         
-        imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 8
-        imageView.layer.cornerRadius = 20
         imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -158,6 +165,10 @@ final class MovieQuizViewController: UIViewController {
         let givenAnswer = true
         
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        
+        yesButton.isEnabled = false
+        noButton.isEnabled = false
+        
     }
     // Функция для кнопки "Нет"
     @IBAction private func noButtonClicked(_ sender: UIButton) {
@@ -165,6 +176,9 @@ final class MovieQuizViewController: UIViewController {
         let givenAnswer = false
         
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        
+        yesButton.isEnabled = false
+        noButton.isEnabled = false
     }
     
     // Связь для изображения
@@ -173,6 +187,10 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var textLabel: UILabel!
     // Связь для счетчика вопросов
     @IBOutlet private var counterLabel: UILabel!
+    // Связь кнопки "Да"
+    @IBOutlet private var yesButton: UIButton!
+    // Связь кнопки "Нет"
+    @IBOutlet private var noButton: UIButton!
     
     
     

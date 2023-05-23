@@ -101,21 +101,14 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="IIO-eL-VEl" firstAttribute="height" secondItem="POO-SL-NlB" secondAttribute="height" id="3hA-t0-iHH"/>
-                                            <constraint firstAttribute="width" constant="88" id="ZqL-S3-IkK"/>
                                             <constraint firstItem="IIO-eL-VEl" firstAttribute="width" secondItem="POO-SL-NlB" secondAttribute="width" id="vjP-p7-WQV"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="804" id="6T0-Ne-ga1"/>
-                                    <constraint firstAttribute="height" constant="804" id="7fx-E8-pkf"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="Fbi-Bb-BXi"/>
-                                    <constraint firstAttribute="width" constant="374" id="LgH-sQ-JFS"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="YP Background"/>
+                        <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="ICb-Fe-w0X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FvV-nu-dpo"/>
                             <constraint firstItem="ICb-Fe-w0X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="hH2-Cb-x0p"/>
@@ -126,7 +119,9 @@
                     <connections>
                         <outlet property="counterLabel" destination="i60-Ma-lX2" id="Bbo-BI-P6B"/>
                         <outlet property="imageView" destination="GE0-4d-oq8" id="cra-FE-jZU"/>
+                        <outlet property="noButton" destination="POO-SL-NlB" id="Bhv-Wf-fMX"/>
                         <outlet property="textLabel" destination="hxF-Uv-zSf" id="wsC-au-H8F"/>
+                        <outlet property="yesButton" destination="IIO-eL-VEl" id="LWi-Xe-umG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -135,9 +130,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="YP Background">
-            <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="YP Black">
             <color red="0.10199999809265137" green="0.10599999874830246" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
